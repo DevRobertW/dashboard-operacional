@@ -121,7 +121,11 @@ if st.button("Consultar"):
 
             for coluna in colunas_data_hora:
                 if coluna in df.columns:
-                    df[coluna] = pd.to_datetime(df[coluna], errors="coerce")
+                    df[coluna] = pd.to_datetime(
+                        df[coluna],
+                        format="%d/%m/%Y %H:%M:%S",
+                        errors="coerce"
+        )
 
             # ==============================
             # VNR
